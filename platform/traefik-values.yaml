@@ -1,0 +1,13 @@
+service:
+  spec:
+    type: NodePort
+
+ports:
+  web:
+    nodePort: 30080
+  websecure:
+    expose: {default: false}
+
+ingressClass:
+  name: traefik
+  isDefaultClass: true

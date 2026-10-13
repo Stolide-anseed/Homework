@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mobile-service
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: mobile.localhost
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service: {name: mobile-service, port: {number: 80}}
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mlflow
+  namespace: mlops
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: mlflow.localhost
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service: {name: mlflow, port: {number: 5000}}
