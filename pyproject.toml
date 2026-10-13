@@ -10,10 +10,13 @@ dependencies = [
     "pydantic",
     "pydantic-settings",
     "pandas",
+    "matplotlib",
     "scikit-learn>=1.6,<1.7",
     "joblib",
     "psycopg[binary]",
     "ipykernel>=7.4.0",
+    "mlflow-skinny>=3.16,<4",
+    "skops>=0.11",
 ]
 
 [dependency-groups]
