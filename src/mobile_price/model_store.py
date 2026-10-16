@@ -7,7 +7,7 @@ def load_model() -> tuple[object, dict, str]:
     """Модель из реестра MLflow по алиасу, а без MODEL_NAME из файла, как раньше."""
     if not settings.model_name:
         bundle = joblib.load(settings.model_path)
-        return bundle["pipeline"], bundle["metadata"], bundle["metadata"]["model_version"]
+        return bundle["model"], bundle["metadata"], str(bundle["metadata"]["version"])
 
     import mlflow
     from mlflow import MlflowClient
