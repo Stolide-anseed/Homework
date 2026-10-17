@@ -131,5 +131,5 @@ Events:
 | 40           | 6/6     | 17  | около 400m | до 15m, после около 400m на каждую поду (при 6 подах) |
 | 60           | 6.6     | 21  | около 650m | до 15m, после около 650m на каждую поду (при 6 подах) |
 ### 2.7
-1. [красный прогон Configmap](https://github.com/Stolide-anseed/Homework/actions/runs/39022519785), [зелённый прогон](https://github.com/Stolide-anseed/Homework/actions/runs/39023191427), упал на моменте загрузки сервера и выдал ошибку (Error from server (BadRequest): previous terminated container "api" in pod "mobile-service-77f4d6749f-6rmtn" not found), также под находиться в состояние CrashLoopBackOff, как понять, что проблема в именно в Configmap не до конца понял
-2. 
+1. [красный прогон Configmap](https://github.com/Stolide-anseed/Homework/actions/runs/39022519785/attempts/1), [зелённый прогон](https://github.com/Stolide-anseed/Homework/actions/runs/39023191427), упал на моменте загрузки сервера и выдал ошибку (Error from server (BadRequest): previous terminated container "api" in pod "mobile-service-77f4d6749f-6rmtn" not found), также под находиться в состояние CrashLoopBackOff, как понять, что проблема в именно в Configmap не до конца понял
+2. [красный прогон](https://github.com/Stolide-anseed/Homework/actions/runs/39024384981), [зелённый прогон](), 
