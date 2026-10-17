@@ -57,7 +57,7 @@ jobs:
 
     permissions: { contents: read, packages: read }
     env:
-      KIND_CLUSTER: hw
+      KIND_CLUSTER: wrong_cluster
     steps:
       - uses: actions/checkout@v7
       - run: echo "IMAGE=ghcr.io/${GITHUB_REPOSITORY,,}:sha-${GITHUB_SHA}" >> "$GITHUB_ENV"
