@@ -86,7 +86,7 @@ jobs:
         run: |
             kubectl create secret generic mobile-secrets \
             --from-literal=POSTGRES_PASSWORD="$DB_PASSWORD" \
-            --from-literal=DATABASE_URL="postgresql://postgres:$DB_PASSWORD@postgres:5432/mobile_price"
+            --from-literal=DATABASE_URL="postgresql://postgres:$DB_PASSWORD@postgres:5432/mobile_price" \
             --dry-run=client -o yaml | kubectl apply -f -
             
       - name: база
