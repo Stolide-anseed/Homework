@@ -1,0 +1,5 @@
+outs:
+- md5: c1ab7aaf11b085b2766630fb0c080c4c
+  size: 124404
+  hash: md5
+  path: change_blue.csv
