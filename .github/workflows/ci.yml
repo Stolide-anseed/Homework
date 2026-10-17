@@ -101,9 +101,8 @@ jobs:
           kubectl rollout status deploy/mobile-service --timeout=120s
       - name: smoke
         run: |
-          U="http://$KIND_CLUSTER-control-plane:30080"; H="Host: mobile_price.localhost"
-          
-          H="Host: mobile-service.localhost"
+          U="http://${KIND_CLUSTER}-control-plane:30080"
+          H="Host: mobile.localhost"
 
           # 1. Проверяем здоровье и версию модели из Registry
           curl --fail --silent --show-error \
