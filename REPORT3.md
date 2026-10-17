@@ -1,8 +1,9 @@
 # Homework 3
 
-## Базовая часть
 
-### 2.1 Блок А:
+## Блок А
+
+### 2.1 :
 
 1. **kubectl get ingress -A**
 ![img.png](image_for_readme/ingres_kubectl.png)
@@ -11,7 +12,9 @@
 3. MlFlow
 ![img.png](image_for_readme/mlflow.png)
 
-### 2.2 Блок Б:
+## Блок Б
+
+### 2.2:
 1. Champion
 ![img.png](image_for_readme/week_champion.png)
 2. Challenger
@@ -32,5 +35,8 @@ MlFlow:
 
 По времени заняло около 60 секунд от клика в UI, до ответа старой версии
 
-### 2.4 Блок С
+## Блок С
 
+### 2.4:
+1. Runner in GitHub ![img.png](image_for_readme/runner.png)
+2. 

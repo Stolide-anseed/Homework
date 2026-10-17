@@ -78,7 +78,7 @@ jobs:
       - name: образ в кластер
         run: |
           docker pull "$IMAGE"
-          kind load docker-image "$IMAGE" --name ci
+          kind load docker-image "$IMAGE" --name "$KIND_CLUSTER"
 
       - name: подтягиваем секреты
         env:
