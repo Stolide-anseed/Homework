@@ -96,7 +96,8 @@ jobs:
           
       - name: сервис
         run: |
-          kubectl apply -f k8s/ 
+          kubectl apply -f k8s/
+          kubectl apply -f platform/ingress.yaml
           kubectl set image deploy/mobile-service api="$IMAGE"
           kubectl rollout status deploy/mobile-service --timeout=120s
       - name: smoke
