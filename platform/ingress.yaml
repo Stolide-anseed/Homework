@@ -5,7 +5,7 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-    - host: wrong.localhost
+    - host: mobile.localhost
       http:
         paths:
           - path: /
