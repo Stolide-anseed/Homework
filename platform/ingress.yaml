@@ -21,7 +21,7 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-    - host: mlflow.localhost
+    - host: mlflow.locallost
       http:
         paths:
           - path: /
