@@ -1,24 +1,19 @@
+import hashlib
 import json
 import os
-import hashlib
 from pathlib import Path
 
-import pandas as pd
 import matplotlib.pyplot as plt
-
-
 import mlflow
+import pandas as pd
+import sklearn
 from mlflow import MlflowClient
 from mlflow.exceptions import MlflowException
-
-
-import sklearn
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import f1_score, precision_score, recall_score
+from sklearn.metrics import ConfusionMatrixDisplay, f1_score, precision_score, recall_score
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import ConfusionMatrixDisplay
 
 DATA_PATH = Path(os.getenv("DATA_PATH", "data/train.csv"))
 MODEL_NAME = os.getenv("MODEL_NAME", "mobile_price")

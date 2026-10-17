@@ -4,4 +4,7 @@ metadata:
   name: mobile-config
 data:
   LOG_LEVEL: "INFO"
-  MODEL_PATH: artifacts/model.joblib
+  MODEL_PATH: artifact/model.joblib
+  MLFLOW_TRACKING_URI: http://mlflow.mlops:5000
+  MODEL_NAME: mobile_price
+  MODEL_ALIAS: champion

@@ -2,6 +2,7 @@ name: ci
 on:
   push: {branches: [main]}
   pull_request:
+  workflow_dispatch:
 
 jobs:
   tests:
@@ -48,10 +49,15 @@ jobs:
           cache-to: type=gha, mode=max
   deploy:
     needs: build
-    runs-on: ubuntu-latest
+
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: [ self-hosted, kind ]
+    concurrency: { group: deploy-kind }
+    timeout-minutes: 10
 
     permissions: { contents: read, packages: read }
-
+    env:
+      KIND_CLUSTER: hw
     steps:
       - uses: actions/checkout@v7
       - run: echo "IMAGE=ghcr.io/${GITHUB_REPOSITORY,,}:sha-${GITHUB_SHA}" >> "$GITHUB_ENV"
@@ -60,8 +66,15 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - uses: helm/kind-action@v1
-        with: {cluster_name: ci}
+      - name: kind, kubectl и доступ к кластеру
+        run: |
+          B=~/.local/bin && mkdir -p $B && echo "$B" >> "$GITHUB_PATH"
+          [ -x $B/kind ] || curl -sSLo $B/kind https://kind.sigs.k8s.io/dl/v0.33.0/kind-linux-amd64
+          [ -x $B/kubectl ] || curl -sSLo $B/kubectl https://dl.k8s.io/v1.37.0/bin/linux/amd64/kubectl
+          chmod +x $B/kind $B/kubectl
+          $B/kind export kubeconfig --name "$KIND_CLUSTER" --internal
+          $B/kubectl get nodes
+
       - name: образ в кластер
         run: |
           docker pull "$IMAGE"
@@ -74,6 +87,7 @@ jobs:
             kubectl create secret generic mobile-secrets \
             --from-literal=POSTGRES_PASSWORD="$DB_PASSWORD" \
             --from-literal=DATABASE_URL="postgresql://postgres:$DB_PASSWORD@postgres:5432/mobile_price"
+            --dry-run=client -o yaml | kubectl apply -f -
             
       - name: база
         run: |
@@ -87,20 +101,87 @@ jobs:
           kubectl rollout status deploy/mobile-service --timeout=120s
       - name: smoke
         run: |
-          kubectl port-forward svc/mobile-service 8080:80 &
-          sleep 5
+          U="http://$KIND_CLUSTER-control-plane:30080"; H="Host: mobile_price.localhost"
           
-          curl --fail -s localhost:8080/health; 
+          H="Host: mobile-service.localhost"
+
+          # 1. Проверяем здоровье и версию модели из Registry
+          curl --fail --silent --show-error \
+            --retry 5 --retry-all-errors \
+            -H "$H" "$U/health" -o health.json
+          cat health.json
           echo
+
+          python3 -c "
+          import json, re
+          with open('health.json') as f:
+              r = json.load(f)
+          assert r['status'] == 'ok', r
+          assert re.fullmatch(r'mobile_price-v[0-9]+', r['model_version']), r
+          "
+
+          # 2. Отправляем наши признаки
+          curl --fail --silent --show-error \
+            -X POST -H "$H" \
+            -H "Content-Type: application/json" \
+            -d @test.json \
+            "$U/v1/predict" -o pred.json
+          cat pred.json
+          echo
+
+          # Проверяем класс, версию
+          RID=$(python3 -c "
+          import json, uuid
+          with open('pred.json') as f:
+              r = json.load(f)
+          with open('health.json') as f:
+              health = json.load(f)
+          price = r['mobile_price']
+          assert type(price) in (int, float), r
+          assert price in (0, 1, 2, 3), r
+          assert r['model_version'] == health['model_version'], r
+          print(uuid.UUID(r['request_id']))
+          ")
+
+          # 3. Ждём запись именно этого запроса с кодом 200
+          for attempt in {1..10}; do
+            COUNT=$(kubectl exec deploy/postgres -- \
+              psql -U postgres -d mobile_price \
+              -v ON_ERROR_STOP=1 \
+              -tAc "SELECT count(*) FROM predictions
+                    WHERE request_id = '$RID'
+                      AND status_code = 200")
+
+            if [ "$COUNT" = "1" ]; then
+              echo "Smoke пройден: запрос $RID найден в БД"
+              exit 0
+            fi
+
+            sleep 1
+          done
+
+          echo "Ошибка: запрос $RID с кодом 200 не найден в БД"
+          exit 1
           
-          curl --fail -s -X POST localhost:8080/v1/predict \
-          -H "Content-Type: application/json" -d @test.json \
-          | python3 -c "import json, sys; r=json.load(sys.stdin); assert 0 <= r['mobile_price'] <= 3, r"
           
-          sleep 2
-          
-          kubectl exec deploy/postgres -- psql -U postgres -d mobile_price \
-            -tc "SELECT count(*) FROM predictions" | grep -q 1
+  
+
+#          kubectl port-forward svc/mobile-service 8080:80 &
+#          sleep 5
+#
+#          curl --fail -s localhost:8080/health;
+#          echo
+#
+#          curl --fail -s -X POST localhost:8080/v1/predict \
+#          -H "Content-Type: application/json" -d @test.json \
+#          | python3 -c "import json, sys; r=json.load(sys.stdin); assert 0 <= r['mobile_price'] <= 3, r"
+#
+#          sleep 2
+#
+#          kubectl exec deploy/postgres -- psql -U postgres -d mobile_price \
+#            -tc "SELECT count(*) FROM predictions" | grep -q 1
+
+
       - name: диагностика
         if: failure()
 

@@ -3,7 +3,6 @@ import time
 import uuid
 from contextlib import asynccontextmanager
 
-import joblib
 import pandas as pd
 from fastapi import BackgroundTasks, FastAPI, HTTPException, Request
 from fastapi.exception_handlers import request_validation_exception_handler
@@ -13,6 +12,7 @@ from starlette.background import BackgroundTask
 
 from mobile_price import db
 from mobile_price.config import settings
+from mobile_price.model_store import load_model
 
 logger = logging.getLogger(__name__)
 
@@ -63,11 +63,9 @@ class BatchPrediction(BaseModel):
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    bundle = joblib.load(settings.model_path)
-    app.state.pipeline = bundle['model']
-    app.state.meta = bundle['metadata']
-    app.state.version = bundle['metadata']['version']
+    app.state.pipeline, app.state.meta, app.state.version = load_model()
 
+    
     db.init()
     yield
     app.state.pipeline = None
@@ -132,7 +130,7 @@ async def validation_error_handler(
 
 @app.get('/health')
 def health():
-    return {'status': 'ok', 'model_version': getattr(app.state, 'version', "unknown"), 'service_version': '1.2', 'path': settings.model_path}
+    return {'status': 'ok', 'model_version': app.state.version, 'service_version': '1.2', 'path': settings.model_path}
 
 @app.get('/ready')
 def ready():

@@ -1,0 +1,478 @@
+[33mcommit f76c3095d6142fdefa493d9813015a1517ae6595[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mhw3[m[33m, [m[1;32mlist[m[33m)[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Fri Oct 16 18:57:59 2026 +0300
+
+    Полностью доделал отчёт по блоку B
+
+[33mcommit f0318cff058d6c56bf65afcabb6cf9e5aec5444c[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Tue Oct 13 17:44:14 2026 +0300
+
+    Сделана часть блока Б и переход к 2.3
+
+[33mcommit e8d982cb035c7351ad2720adbcaa33ac8d9c540a[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Tue Oct 13 13:22:12 2026 +0300
+
+    ДоССдуелал полноБлок А вмеÑ и начал заполнение REPORT3
+
+[33mcommit 8dd4a1193e3ae7d596fe1717b590016d597910f4[m
+Merge: 05eb7a4 813f363
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Wed Oct 7 18:48:20 2026 +0300
+
+    Merge branch 'main' of https://github.com/Stolide-anseed/Homework_1
+
+[33mcommit 05eb7a49074277959da6975b57a7b837c2273cf3[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Wed Oct 7 18:48:07 2026 +0300
+
+    final update REPORT2.md
+
+[33mcommit 813f363b64756da758bc04f6e1fe96a065eacd39[m
+Merge: 562422a aac4eaf
+Author: Stolide-anseed <158155444+Stolide-anseed@users.noreply.github.com>
+Date:   Wed Oct 7 17:22:06 2026 +0300
+
+    Merge pull request #6 from Stolide-anseed/hw2
+    
+    2.2 pull request
+
+[33mcommit aac4eaf267e2292e4015b0a0426dc5d7ca6e0ed4[m[33m ([m[1;31morigin/hw2[m[33m, [m[1;32mhw2[m[33m)[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Wed Oct 7 17:20:03 2026 +0300
+
+    Правильно выполняю пунтк 2.2(теперь отправляю рабочий тест)
+
+[33mcommit e6f662d428e48d97bbe20e6ee64df9fcb876b8ab[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Wed Oct 7 17:17:14 2026 +0300
+
+    Правильно выполняю пунтк 2.2(ломаю тест, чтобы потом починить)
+
+[33mcommit 9ec36da34c83045e6d9ec71e0ae1daceb840d82f[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Wed Oct 7 17:16:30 2026 +0300
+
+    Revert "Правильно выполняю пунтк 2.2"
+    
+    This reverts commit aee1b140fcef28c45cc338295c1f42bea39b22fc.
+
+[33mcommit aee1b140fcef28c45cc338295c1f42bea39b22fc[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Wed Oct 7 17:15:12 2026 +0300
+
+    Правильно выполняю пунтк 2.2
+
+[33mcommit 9e7d7b4cac5194215ca60408c0e513bbe9ea1bde[m
+Merge: 18970c8 562422a
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Wed Oct 7 17:14:44 2026 +0300
+
+    обновил ветку hw2 до текущей версии
+
+[33mcommit 562422a38ec204534b73e0569d8487d565427fa1[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Wed Oct 7 17:12:47 2026 +0300
+
+    Update REPORT2.md
+
+[33mcommit ee9ce393d30dcf20dcb14a468d52f6255f5c8c59[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Wed Oct 7 17:00:50 2026 +0300
+
+    fix threshold for good test
+
+[33mcommit 62c8af1b428aae9d3338eaa6660e406ebd5110a1[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Wed Oct 7 17:00:10 2026 +0300
+
+    Add fixed dataset for model quality test
+
+[33mcommit f7cb9b43677b8fd5b5bf8462b916408a407f9f4f[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Wed Oct 7 16:56:44 2026 +0300
+
+    Добавил большой threshould для провального теста
+
+[33mcommit f2f685a753945de86ae34f5927e1ed0593d5b58b[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Wed Oct 7 16:56:01 2026 +0300
+
+    создал тест для проверки качества модели на отрезке данных
+
+[33mcommit ae9f1f9f4100f9dd3ea57cefc77b8d9bd0a5132c[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Wed Oct 7 16:12:07 2026 +0300
+
+    Поправил лимит, чтобы показывалось в диагностике
+
+[33mcommit e08e27fc0ed1b3eeb74dff40950db64dcdfaf5aa[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Wed Oct 7 16:06:51 2026 +0300
+
+    Починил секрет, но теперь повысил память
+
+[33mcommit dcf09a4ce2aaa1a5ce44cada262308b8e79683c5[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Wed Oct 7 15:55:21 2026 +0300
+
+    Поставил неправильный секрет
+
+[33mcommit 164a173b73b3278bdf37cd58a9114341e21a2709[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Wed Oct 7 15:50:18 2026 +0300
+
+    Поставил неправильный секрет
+
+[33mcommit 2b91fb38258a53683b991d82d789f0188c15611f[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Wed Oct 7 15:47:17 2026 +0300
+
+    Починил model_path
+
+[33mcommit 8d9da5a0698752e87eb2cd3711d0071aa00261cf[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Wed Oct 7 15:39:55 2026 +0300
+
+    исправил опечатку
+
+[33mcommit 05323eaae3d168bafdcd3248b3261f3490631ff4[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Wed Oct 7 15:34:37 2026 +0300
+
+    исправил опечатку
+
+[33mcommit a46ceb9a6f8cf117f95d70b04ae98f7854118e84[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Wed Oct 7 15:29:19 2026 +0300
+
+    Неправильный путь
+
+[33mcommit b909296c3413a247ab40e748112f68a143b4c307[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Wed Oct 7 14:32:31 2026 +0300
+
+    Добавил --no-dev в dockerfile
+
+[33mcommit 8c8794da44f078550db674cae676cdef422f4a92[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Wed Oct 7 14:25:29 2026 +0300
+
+    Добавил ответ на вопросы
+
+[33mcommit cb13be3a3f7a3ba9c52e4c0161c0d694b73c2524[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Tue Oct 6 21:30:32 2026 +0300
+
+    вернул обратно нормальную память
+
+[33mcommit 8a578e6b683c75717f4900cd9f8e7a8324fbf63e[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Tue Oct 6 21:29:58 2026 +0300
+
+    поставил большую память
+
+[33mcommit bb7b8244ec77aa5b9879536e40c09b8959e359b1[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Tue Oct 6 21:05:40 2026 +0300
+
+    вернул
+
+[33mcommit 29e09bf5aca55ffb20cdfda1f0e41c5122b09acd[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Tue Oct 6 20:58:54 2026 +0300
+
+    поставил не существующий секрет
+
+[33mcommit 8ed178296f9509696182f539c66482ab51f5a6ac[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Tue Oct 6 20:50:14 2026 +0300
+
+    починил путь в configmap
+
+[33mcommit 811a6f90ccda6e2528020f700159ff556055e28c[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Tue Oct 6 19:27:25 2026 +0300
+
+    поменял путь к несуществующей модели
+
+[33mcommit 18970c8048a0ad0eee3727b4fb8c5f3042c50559[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Tue Oct 6 18:57:25 2026 +0300
+
+    Revert "Сделал специально ошибочный тест для красного pull request"
+    
+    This reverts commit da4a8a2e0ece2b6f2b4516cb85c3be285596b25d.
+
+[33mcommit 5f7e36e3d2378e35d8be32276f0ada163e364128[m
+Merge: 090d88c 4221e2f
+Author: Stolide-anseed <158155444+Stolide-anseed@users.noreply.github.com>
+Date:   Tue Oct 6 18:47:07 2026 +0300
+
+    Merge pull request #5 from Stolide-anseed/revert-4-hw2
+    
+    Revert "Ошибочный тест для красного pull request"
+
+[33mcommit 4221e2ff16238a16a13786ba49b8d5794e9168d0[m
+Author: Stolide-anseed <158155444+Stolide-anseed@users.noreply.github.com>
+Date:   Tue Oct 6 18:44:23 2026 +0300
+
+    Revert "Ошибочный тест для красного pull request"
+
+[33mcommit 090d88c01957de9b202106cc47f1c5fded3b1089[m
+Merge: bcf253f da4a8a2
+Author: Stolide-anseed <158155444+Stolide-anseed@users.noreply.github.com>
+Date:   Tue Oct 6 18:43:53 2026 +0300
+
+    Merge pull request #4 from Stolide-anseed/hw2
+    
+    Ошибочный тест для красного pull request
+
+[33mcommit da4a8a2e0ece2b6f2b4516cb85c3be285596b25d[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Tue Oct 6 18:41:55 2026 +0300
+
+    Сделал специально ошибочный тест для красного pull request
+
+[33mcommit bde53e400cb11debdef092ffc26216c012e1a259[m
+Merge: aede962 bcf253f
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Tue Oct 6 16:00:24 2026 +0300
+
+    merge hw2
+
+[33mcommit bcf253ff48c8c0814be1ee68c1122225df4ad91e[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Tue Oct 6 15:54:41 2026 +0300
+
+    Добавил свой smoke test + создал файл REPORT2.md
+
+[33mcommit 2bdafe6d8d9ee105406c6954808db44af261845d[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Mon Oct 5 20:30:22 2026 +0300
+
+    fix
+
+[33mcommit 126f49aa223d637df8f21d19475b4f38d59cb23f[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Mon Oct 5 20:23:44 2026 +0300
+
+    как же надоели опечатки...
+
+[33mcommit 5fe70c5171598e8675daf27b6bb45e4f7b4c9391[m
+Author: Stolide-anseed <158155444+Stolide-anseed@users.noreply.github.com>
+Date:   Mon Oct 5 18:44:27 2026 +0300
+
+    delete last "with" in ci.yml
+
+[33mcommit 58e98065eca9b2b95380c095d015c208309cd1c2[m
+Author: Stolide-anseed <158155444+Stolide-anseed@users.noreply.github.com>
+Date:   Mon Oct 5 18:34:54 2026 +0300
+
+    fix another typos in ci.yaml
+
+[33mcommit 87c804060fa95b2b4885d0cba4dfde31b3f1b9b0[m
+Author: Stolide-anseed <158155444+Stolide-anseed@users.noreply.github.com>
+Date:   Mon Oct 5 18:25:44 2026 +0300
+
+    fix "подтягиваем секреты" in ci.yaml
+
+[33mcommit 75428f97514b79098d073f25ddd0f618c7b8ee4f[m
+Author: Stolide-anseed <158155444+Stolide-anseed@users.noreply.github.com>
+Date:   Mon Oct 5 18:21:10 2026 +0300
+
+    change 'needs' in deploy on build
+
+[33mcommit aede96266bbe1ac77cbd8729b4bddb17f6008cb5[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Mon Oct 5 18:19:32 2026 +0300
+
+    change 'needs' in deploy on build
+
+[33mcommit 7fc225013c9ce0363520c017a3c6c388a1cc3e95[m
+Merge: 215c875 48541ce
+Author: Stolide-anseed <158155444+Stolide-anseed@users.noreply.github.com>
+Date:   Mon Oct 5 18:16:23 2026 +0300
+
+    Merge pull request #3 from Stolide-anseed/hw2
+    
+    add deploy jobs
+
+[33mcommit 48541ce962d0833c4f7fa72dfd7c7b748dff97b8[m
+Merge: d6e5b81 215c875
+Author: Stolide-anseed <158155444+Stolide-anseed@users.noreply.github.com>
+Date:   Mon Oct 5 18:14:59 2026 +0300
+
+    Merge branch 'main' into hw2
+
+[33mcommit d6e5b8195c0663b44ffddc27bce8f8ad6cec9f01[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Mon Oct 5 18:11:24 2026 +0300
+
+    add deploy jobs
+
+[33mcommit 215c875dc71d5b17e124a5506417fb18fe25e10d[m
+Author: Stolide-anseed <158155444+Stolide-anseed@users.noreply.github.com>
+Date:   Mon Oct 5 13:29:09 2026 +0300
+
+    fixed typos in the code ci.yml
+
+[33mcommit f9fba637778874a68aa29ab355cbe1e8800bb98c[m
+Merge: 767313d 9924b7c
+Author: Stolide-anseed <158155444+Stolide-anseed@users.noreply.github.com>
+Date:   Mon Oct 5 13:23:32 2026 +0300
+
+    Merge pull request #2 from Stolide-anseed/hw2
+    
+    add db and docker to ci
+
+[33mcommit 9924b7c7b1de7444e58275ee4efb237dfc010cde[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Mon Oct 5 13:20:13 2026 +0300
+
+    add db to ci
+
+[33mcommit 767313d8926acf0fc80aa209c1206234db40a458[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Mon Oct 5 10:13:01 2026 +0300
+
+    add test integration
+
+[33mcommit dcb5cdd4ed82f33d96473cfd61142ac533d1d943[m
+Merge: 1fc3925 7672f93
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Sun Oct 4 19:49:28 2026 +0300
+
+    Merge branch 'main' of https://github.com/Stolide-anseed/Homework_1
+
+[33mcommit 1fc39258b23623d861f86589825da6ff0effe4c6[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Sun Oct 4 19:47:06 2026 +0300
+
+    Добавить логирование ошибочных запросов с кодом 422
+
+[33mcommit 7672f93d60d74a6cd93cb7c48b0a3a7d62ca92ff[m
+Merge: 6704310 75b1e18
+Author: Stolide-anseed <158155444+Stolide-anseed@users.noreply.github.com>
+Date:   Sun Oct 4 18:36:48 2026 +0300
+
+    Merge pull request #1 from Stolide-anseed/hw2
+    
+    Hw2
+
+[33mcommit 75b1e18d84cedcaae4f380291d9508a188e927f6[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Sun Oct 4 18:33:35 2026 +0300
+
+    update README
+
+[33mcommit 6704310579a059e6c80ffee33c471fc5bf747b06[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Sun Oct 4 10:56:58 2026 +0300
+
+    Update README
+
+[33mcommit 6d4580f9f3ac6cf8e340ef1ea598b00e057777b9[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Sun Oct 4 10:38:16 2026 +0300
+
+    add test CI.yml
+
+[33mcommit 266a47c8c11f97e222c8de9bd617c88ae5f5ad71[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Sun Oct 4 10:20:12 2026 +0300
+
+    python-version + ruff in .toml
+
+[33mcommit d25f03ae5e2a3e39c75670833634655101802382[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Fri Oct 2 17:04:09 2026 +0300
+
+    обновил README
+
+[33mcommit 6fbb165fc88d9aa4ac79b94e7b024448fea6a76d[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Fri Oct 2 00:19:29 2026 +0300
+
+    Сделал 3 бонусное задание
+
+[33mcommit 2dbfd34888c8db08e3715776d4e78ceae67987b7[m
+Merge: 69a23d7 ddaced3
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Thu Oct 1 18:28:34 2026 +0300
+
+    Merge branch 'main' of https://github.com/Stolide-anseed/Homework_1
+
+[33mcommit 69a23d7d49733a932a3d4db75ee57d403ceaf683[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Thu Oct 1 18:22:59 2026 +0300
+
+    Решил звёздочку 2, отчёт в README
+
+[33mcommit ddaced300a79bbbacb998c9b68625221fded0b6c[m
+Author: Stolide-anseed <158155444+Stolide-anseed@users.noreply.github.com>
+Date:   Wed Sep 30 17:44:15 2026 +0300
+
+    Update README.md
+
+[33mcommit affcc4efb6c2bf06e278efac788887b6e82d8695[m
+Author: Stolide-anseed <158155444+Stolide-anseed@users.noreply.github.com>
+Date:   Wed Sep 30 17:23:56 2026 +0300
+
+    Update README.md
+
+[33mcommit 23dde310b667079decfe7322cf69fb34cd726765[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Wed Sep 30 17:22:38 2026 +0300
+
+    Базовая часть сделана
+
+[33mcommit 92cf4191e1504ce8ea5f5279308afcf6ae5b69c4[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Wed Sep 30 16:43:27 2026 +0300
+
+    Добавил в сервис Kubernets и создал кластер из двух под
+
+[33mcommit 87c7dadb90ad8d96cc2bfe5451f9d1f2529ede68[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Wed Sep 30 15:19:11 2026 +0300
+
+    Обернул сервис в контейнер
+
+[33mcommit ce8e36a0816f085bcdc9b9bd0ec9f4819914f10e[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Wed Sep 30 12:36:39 2026 +0300
+
+    Добавил 8 тестов на проверку работоспособности теста. Также проверил сервис на работоспособность с помощью тестов. Сервис прошёл 8\8 тестов
+
+[33mcommit cb306ff275a0a99e4b168e19b4565dbbfedeaf6b[m
+Merge: da28105 fc31974
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Wed Sep 30 10:00:30 2026 +0300
+
+    Merge branch 'main' of https://github.com/Stolide-anseed/Homework_1
+
+[33mcommit da28105ae38f4feb18548347957eb733ab9a3140[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Wed Sep 30 09:59:37 2026 +0300
+
+    Добавил полноценный сервис из четырёх точек: health, ready, /v1/predict, автодоки. Сервис коррекно выдаёт ответ на правильные данные
+
+[33mcommit fc3197493a2649fe20b9266e2ed0b5969c20ef9e[m
+Author: Stolide-anseed <158155444+Stolide-anseed@users.noreply.github.com>
+Date:   Tue Sep 29 09:41:10 2026 +0300
+
+    Delete .idea directory
+
+[33mcommit a318c39847a182bb0fc7f665bcc7454672a6ea3e[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Tue Sep 29 09:40:00 2026 +0300
+
+    Поправил gitignore
+
+[33mcommit 381235eda106eeb7c5b0032a3b758cde79f9da04[m
+Author: Stolide-anseed <stolide321@gmail.com>
+Date:   Tue Sep 29 09:38:37 2026 +0300
+
+    Исправил проблему с не правильно загруженной моделью
