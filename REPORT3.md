@@ -132,4 +132,7 @@ Events:
 | 60           | 6.6     | 21  | около 650m | до 15m, после около 650m на каждую поду (при 6 подах) |
 ### 2.7
 1. [красный прогон Configmap](https://github.com/Stolide-anseed/Homework/actions/runs/39022519785/attempts/1), [зелённый прогон](https://github.com/Stolide-anseed/Homework/actions/runs/39023191427), упал на моменте загрузки сервера и выдал ошибку (Error from server (BadRequest): previous terminated container "api" in pod "mobile-service-77f4d6749f-6rmtn" not found), также под находиться в состояние CrashLoopBackOff, как понять, что проблема в именно в Configmap не до конца понял
-2. [красный прогон](https://github.com/Stolide-anseed/Homework/actions/runs/39024384981), [зелённый прогон](), 
+2. [красный прогон](https://github.com/Stolide-anseed/Homework/actions/runs/39024384981), [зелённый прогон](), ``Run B=~/.local/bin && mkdir -p $B && echo "$B" >> "$GITHUB_PATH"
+ERROR: could not locate any control plane nodes for cluster named 'wrong_cluster'. Use the --name option to select a different cluster
+Error: Process completed with exit code 1.``, как видно по логам можно увидеть, что программа не может найти кластер
+3. 

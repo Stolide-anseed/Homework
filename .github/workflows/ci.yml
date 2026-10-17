@@ -117,7 +117,8 @@ jobs:
               r = json.load(f)
           assert r['status'] == 'ok', r
           assert re.fullmatch(r'mobile_price-v[0-9]+', r['model_version']), r
-          "
+          " 
+          sleep 5
 
           # 2. Отправляем наши признаки
           curl --fail --silent --show-error \
@@ -126,7 +127,8 @@ jobs:
             -d @test.json \
             "$U/v1/predict" -o pred.json
           cat pred.json
-          echo
+          echo 
+          sleep 2
 
           # Проверяем класс, версию
           RID=$(python3 -c "
