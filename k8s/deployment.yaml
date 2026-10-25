@@ -22,7 +22,7 @@ spec:
             - configMapRef: { name: mobile-config }
             - secretRef: { name: mobile-secrets }
           lifecycle:
-            prestop:
+            preStop:
               sleep: {seconds: 5}
           startupProbe:
             httpGet: {path: /health, port: 8000}
