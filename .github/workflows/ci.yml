@@ -166,7 +166,7 @@ jobs:
           exit 1
           
           
-  
+          curl --fail -s -H "$H" "$U/metrics" | grep -q '^mobile_price_model_info{version="mobile_price-v'
 
 #          kubectl port-forward svc/mobile-service 8080:80 &
 #          sleep 5
@@ -194,3 +194,5 @@ jobs:
           kubectl describe deploy/mobile-service | tail -20
           kubectl logs deploy/mobile-service -c api --previous --tail=100 || true
           kubectl get events --sort-by=.metadata.creationTimestamp
+      - name: мониторинг
+        run: kubectl apply -f k8s/monitoring/
