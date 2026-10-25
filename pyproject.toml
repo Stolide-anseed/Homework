@@ -10,6 +10,7 @@ dependencies = [
     "pydantic",
     "pydantic-settings",
     "pandas",
+    "matplotlib",
     "scikit-learn>=1.6,<1.7",
     "joblib",
     "psycopg[binary]",
