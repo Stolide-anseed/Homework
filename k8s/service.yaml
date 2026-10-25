@@ -2,11 +2,13 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mobile-service
-
+  labels:
+    app: mobile_price
 spec:
   type: ClusterIP
   selector:
     app: mobile_price
   ports:
-    - port: 80
+    - name: http
+      port: 80
       targetPort: 8000

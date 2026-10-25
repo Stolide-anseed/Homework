@@ -7,12 +7,31 @@ import pandas as pd
 from fastapi import BackgroundTasks, FastAPI, HTTPException, Request
 from fastapi.exception_handlers import request_validation_exception_handler
 from fastapi.exceptions import RequestValidationError
+from prometheus_client import Counter, Gauge, Histogram
+from prometheus_fastapi_instrumentator import Instrumentator
 from pydantic import BaseModel, Field
 from starlette.background import BackgroundTask
 
 from mobile_price import db
 from mobile_price.config import settings
 from mobile_price.model_store import load_model
+
+PREDICTIONS = Counter(
+    "mobile_price_predictions_total",
+    "Predictions by price class",
+    ["price_class"],
+)
+
+MODEL_INFO = Gauge(
+    "mobile_price_model_info",
+    "Model loaded by this pod",
+    ["version"],
+)
+
+LATENCY_BUCKETS = (
+    0.002, 0.005, 0.01, 0.015, 0.02,
+    0.025, 0.05, 0.1, 0.25, 0.5, 1,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -64,14 +83,14 @@ class BatchPrediction(BaseModel):
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     app.state.pipeline, app.state.meta, app.state.version = load_model()
-
+    MODEL_INFO.labels(app.state.version).set(1)
     
     db.init()
     yield
     app.state.pipeline = None
 
 app = FastAPI(title="Mobile Price Prediction API", version="1.0", lifespan=lifespan)
-
+Instrumentator().instrument(app, latency_lowr_buckets=LATENCY_BUCKETS).expose(app)
 
 
 # для отлавливания ошибки до предикта
@@ -167,7 +186,8 @@ def predict(x: Features, bg: BackgroundTasks, request: Request):
         status_code = status_code
     )
 
-
+    PREDICTIONS.labels(price_class=str(int(mobile_price))).inc()
+    
     return (
             Prediction(
                 mobile_price=mobile_price,

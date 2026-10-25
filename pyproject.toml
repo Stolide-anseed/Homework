@@ -10,13 +10,18 @@ dependencies = [
     "pydantic",
     "pydantic-settings",
     "pandas",
-    "matplotlib",
     "scikit-learn>=1.6,<1.7",
     "joblib",
     "psycopg[binary]",
-    "ipykernel>=7.4.0",
     "mlflow-skinny>=3.16,<4",
     "skops>=0.11",
+    "prometheus-client>=0.21",
+    "prometheus-fastapi-instrumentator>=8",
+    "implicit>=0.7.3",
+    "pandera>=0.33.1",
+    "scipy>=1.17.1",
+    "pyarrow>=25.0.1",
+    "dvc[s3]>=3.67.1",
 ]
 
 [dependency-groups]
@@ -25,7 +30,6 @@ dev = [
     'httpx2',
     "locust",
     'ruff',
-    "dvc>=3.67.1",
 ]
 
 [build-system]

@@ -4,6 +4,8 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 .env
+data/*.csv
+data/*.parquet
 k8s/
 tests/
 locustfile.py
@@ -13,5 +15,3 @@ scripts/
 .dvc/cache/
 .dvc/tmp/
 .dvc/config.local
-datasets/*.csv
-datasets/*.parquet

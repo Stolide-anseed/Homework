@@ -18,8 +18,8 @@ from sklearn.preprocessing import StandardScaler
 DATA_PATH = Path(os.getenv("DATA_PATH", "data/train.csv"))
 MODEL_NAME = os.getenv("MODEL_NAME", "mobile_price")
 EXPERIMENT = os.getenv("MLFLOW_EXPERIMENT", "mobile_price")
-C = float(os.getenv("C", "2.0"))
-MIN_GAIN = float(os.getenv("GATE_MIN_GAIN", "0.1"))
+C = float(os.getenv("C", "1.0"))
+MIN_GAIN = float(os.getenv("GATE_MIN_GAIN", "0.001"))
 SEED = 42
 SKOPS_TRUSTED = ["numpy.dtype", "sklearn.compose._column_transformer._RemainderColsList"]
 

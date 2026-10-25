@@ -28,3 +28,59 @@ spec:
             pathType: Prefix
             backend:
               service: {name: mlflow, port: {number: 5000}}
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: s3
+  namespace: mlops
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: s3.localhost
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service: {name: rustfs, port: {number: 9000}}
+    - host: s3-console.localhost
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service: {name: rustfs, port: {number: 9001}}
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: grafana
+  namespace: monitoring
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: grafana.localhost
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service: {name: monitoring-grafana, port: {number: 80}}
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: airflow
+  namespace: mlops
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: airflow.localhost
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service: {name: airflow, port: {number: 8080}}

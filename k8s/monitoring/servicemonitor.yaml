@@ -1,0 +1,14 @@
+# Prometheus Operator находит сервисы с меткой app: churn и раз в 15 секунд забирает /metrics с порта http
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: mobile-service
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: mobile_price
+  endpoints:
+    - port: http
+      path: /metrics
+      interval: 15s
