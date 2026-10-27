@@ -27,7 +27,7 @@ MODEL_INFO = Gauge(
     "Model loaded by this pod",
     ["version"],
 )
-
+# в среднем ответы занимают около 16ms
 LATENCY_BUCKETS = (
     0.002, 0.005, 0.01, 0.015, 0.02,
     0.025, 0.05, 0.1, 0.25, 0.5, 1,
