@@ -11,3 +11,8 @@
 1. Скрин Бакета: ![img.png](image_for_readme/Baket.png)
 2. Файл в репозитории .dvc
 3. Вывод команды `docker run --rm --entrypoint ls "$IMAGE" /app/data/` ![img.png](image_for_readme/sadas.png)
+
+### Проверка данных
+1. [Зелённый прогон](https://github.com/Stolide-anseed/Homework/actions/runs/40731080681/job/122967902906)
+2.  Прогон validate в MLflow с valid=false ![img.png](image_for_readme/rqwrqwr.png)
+3. failure_cases.csv ![img.png](image_for_readme/twt.png)
