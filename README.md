@@ -161,9 +161,6 @@ kubectl --context kind-hw get pods -A
 
 В `/health` ожидается версия вида `mobile_price-vN`, в ответе `/v1/predict` —
 `mobile_price` от 0 до 3 и `request_id`. Запросы идут через Ingress, без port-forward.
-Для пункта 1 сохраните вывод с готовыми Pod и в отчёте укажите реальное время
-от начала подготовки до успешного ответа. Сквозной запуск по этой инструкции
-в чистом кластере ещё требуется проверить; замер времени не подменяется оценкой.
 
 ### Адреса интерфейсов
 
@@ -172,6 +169,6 @@ kubectl --context kind-hw get pods -A
 | Сервис | http://mobile.localhost/docs |
 | MLflow | http://mlflow.localhost |
 | Airflow | http://airflow.localhost |
-| Grafana | http://grafana.localhost — учебные `admin` / `admin` |
+| Grafana | http://grafana.localhost —  `admin` / `admin` |
 | S3 API | http://s3.localhost |
 | S3 Console | http://s3-console.localhost/rustfs/console/index.html |
