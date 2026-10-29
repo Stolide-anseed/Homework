@@ -100,6 +100,15 @@ jobs:
           kubectl apply -f platform/ingress.yaml
           kubectl set image deploy/mobile-service api="$IMAGE"
           kubectl rollout status deploy/mobile-service --timeout=120s
+          
+
+      - name: мониторинг и DAG
+        run: |
+            kubectl apply -f k8s/monitoring/
+            kubectl -n mlops create configmap airflow-dags --from-file=dags/ \
+              --dry-run=client -o yaml | kubectl apply -f -
+            kubectl -n mlops exec deploy/airflow -- airflow variables set churn_image "$IMAGE"
+
       - name: smoke
         run: |
           U="http://${KIND_CLUSTER}-control-plane:30080"
