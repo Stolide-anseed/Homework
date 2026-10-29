@@ -107,7 +107,7 @@ jobs:
             kubectl apply -f k8s/monitoring/
             kubectl -n mlops create configmap airflow-dags --from-file=dags/ \
               --dry-run=client -o yaml | kubectl apply -f -
-            kubectl -n mlops exec deploy/airflow -- airflow variables set churn_image "$IMAGE"
+            kubectl -n mlops exec deploy/airflow -- airflow variables set mobile_price_image "$IMAGE"
 
       - name: smoke
         run: |
